@@ -1,15 +1,20 @@
 name : Generate Ascii 
 on: push
 jobs:
-    first_job:
+    ascii_job:
         runs-on: ubuntu-latest
 
         steps: 
           - name: checkout step
             uses: actions/checkout@v4
 
-          - name: run the acii script
-            run: ./generat-ascii.sh
+          - name: execute the acii script
+            run: |
+                chmod generat-ascii.sh
+                ./generate-ascii.sh
+          - name: list the repo files
+            run: ls -ltra
+                
 
 
         #   - name: install cowsay
@@ -27,6 +32,4 @@ jobs:
         #   - name: Read file
         #     run: cat dragon.txt
 
-          - name: list the repo files
-            run: ls -ltra
-            
+          
