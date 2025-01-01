@@ -8,20 +8,24 @@ jobs:
           - name: checkout step
             uses: actions/checkout@v4
 
-          - name: install cowsay
-            run: sudo apt install cowsay -y 
+          - name: run the acii script
+            run: ./generate-ascii.sh
+
+
+        #   - name: install cowsay
+        #     run: sudo apt install cowsay -y 
             
-          - name: Generate A AscII Artwork
-            run: cowsay -f dragon "Run for cover , I am a dragon">>dragon.txt
+        #   - name: Generate A AscII Artwork
+        #     run: cowsay -f dragon "Run for cover , I am a dragon">>dragon.txt
 
-          - name: list files
-            run:  ls
+        #   - name: list files
+        #     run:  ls
 
-          - name: grep the dragon file
-            run: grep  -i "dragon" dragon.txt
+        #   - name: grep the dragon file
+        #     run: grep  -i "dragon" dragon.txt
 
-          - name: Read file
-            run: cat dragon.txt
+        #   - name: Read file
+        #     run: cat dragon.txt
 
           - name: list the repo files
             run: ls -ltra
