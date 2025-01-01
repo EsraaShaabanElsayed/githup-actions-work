@@ -2,14 +2,17 @@ name : first workflow
 on: push
 jobs:
     first_job:
-
         runs-on: ubuntu-latest
+
         steps: 
-        - name: first step
-          run: echo 'hello world '
+          - name: checkout step
+            uses: actions@checkout@v4
 
-        - name: list files
-          run: ls 
+          - name: first step
+            run: echo 'hello world '
 
-        - name: Read file
-          run: cat Hello.html
+          - name: list files
+            run: ls 
+
+          - name: Read file
+            run: cat Hello.html
