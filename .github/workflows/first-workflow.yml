@@ -14,9 +14,7 @@ jobs:
               ls -r
               cat Hello.html
             
-          - name: Generate A AscII Artwork
-            run: cowsay -f dragon -f "Run for cover , I am a dragon">>dragon.txt
-
+          
           # - name: list files
           #   run:  ls
 
