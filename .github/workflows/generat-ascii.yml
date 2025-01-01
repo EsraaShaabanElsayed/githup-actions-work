@@ -12,7 +12,7 @@ jobs:
             run: sudo apt install cowsay -y 
             
           - name: Generate A AscII Artwork
-            run: cowsay -f dragon -f "Run for cover , I am a dragon">>dragon.txt
+            run: cowsay -f dragon "Run for cover , I am a dragon">>dragon.txt
 
           - name: list files
             run:  ls
