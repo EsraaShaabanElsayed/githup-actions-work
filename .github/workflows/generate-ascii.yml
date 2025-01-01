@@ -10,7 +10,7 @@ jobs:
 
           - name: execute the acii script
             run: |
-                chmod  -x generat-ascii.sh
+                chmod  -x generate-ascii.sh
                 ./generate-ascii.sh
           - name: list the repo files
             run: ls -ltra
