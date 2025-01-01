@@ -1,0 +1,42 @@
+name: multi-jobs
+on: push
+jobs:
+    build-job:
+        runs-on: ubuntu-latest
+        steps: 
+          - name: checkout step
+            uses: actions/checkout@v4
+
+          - name: Install the Cowsay
+            run: sudo apt install cowsay -y 
+
+          - name: Execute The Cowsay command
+            run: cowsay -f dragon "Run for cover , I am a dragon">>dragon.txt
+                
+
+
+
+
+
+    test-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: sleep for a 10 sec
+              run: sleep 30
+            - name: test the file
+              run: grep  -i "dragon" dragon.txt
+
+
+
+
+
+    deployment-job:
+        runs-on:  ubuntu-latest
+        steps:
+            - name: Read file
+              run: cat dragon.txt
+            - name: show massage
+              run: echo "Deployment ..."
+
+
+
